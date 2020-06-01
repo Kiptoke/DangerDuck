@@ -17,17 +17,15 @@ func get_input():
 		velocity.y -= 1
 	if Input.is_action_just_pressed("mouse_click"):
 		shoot()
+	if Input.is_action_pressed("right_click"):
+		shoot()
 	velocity = velocity.normalized() * speed
 
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
-func _process(_delta):
-	look_at(get_global_mouse_position())
-	print($gunFront.get_position())
-
 func shoot():
 	var bul = Bullet.instance()
-	bul.start($gunFront.global_position,rotation)
+	bul.start(get_node("Gun/gunFront").global_position,$Gun.rotation)
 	get_parent().add_child(bul)
