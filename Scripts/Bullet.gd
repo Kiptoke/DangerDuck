@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 750
+var speed = 1500
 var velocity = Vector2()
 
 func start(pos, dir):
@@ -11,9 +11,11 @@ func start(pos, dir):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		#velocity = velocity.bounce(collision.normal)
-		if collision.collider.has_method("hit"):
-			collision.collider.hit()
+		print("hit with ", collision.collider.name)
+		if(collision.collider.is_in_group("Enemies")):
+			queue_free()
+			collision.collider.queue_free()
+			#hit.collider
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

@@ -4,10 +4,11 @@ var speed = 500
 
 var velocity = Vector2()
 var Bullet = preload("res://Bullet.tscn")
+var Enemy = preload("res://Enemy.tscn")
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") :
 		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
