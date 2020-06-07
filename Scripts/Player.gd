@@ -30,3 +30,8 @@ func shoot():
 	var bul = Bullet.instance()
 	bul.start(get_node("Gun/gunFront").global_position,$Gun.rotation)
 	get_parent().add_child(bul)
+
+
+func _on_SceneTransition_body_entered(body):
+	if(body.name == "Player"):
+		print("scene transition") # Transition to inside scene
