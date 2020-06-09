@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Danger Duck"
-run/main_scene="res://Outside.tscn"
+run/main_scene="res://Inside.tscn"
 config/icon="res://Original Graphic Files/icon.png"
 
 [display]
