@@ -31,7 +31,7 @@ func shoot():
 	bul.start(get_node("Gun/gunFront").global_position,$Gun.rotation)
 	get_parent().add_child(bul)
 
-
 func _on_SceneTransition_body_entered(body):
 	if(body.name == "Player"):
+		get_tree().change_scene("res://Inside.tscn")
 		print("scene transition") # Transition to inside scene
