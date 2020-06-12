@@ -16,8 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Danger Duck"
-run/main_scene="res://Outside.tscn"
+run/main_scene="res://Main Menu.tscn"
 config/icon="res://Original Graphic Files/icon.png"
+
+[autoload]
+
+Player="*res://Scripts/PlayerVars.gd"
+Music="*res://Music.tscn"
 
 [display]
 
@@ -70,6 +75,7 @@ right_click={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Bullets"
 2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Collectibles"
 2d_physics/layer_5="Walls"
 
 [rendering]

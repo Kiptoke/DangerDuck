@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/HealthText.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthText" type="RichTextLabel" parent="."]
+margin_right = 192.0
+margin_bottom = 64.0
+bbcode_enabled = true
+bbcode_text = "[color=red]Health: 0[/color]"
+text = "Health: 0"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="RichTextLabel" parent="."]
+visible = false
+margin_top = 312.0
+margin_right = 1024.0
+margin_bottom = 328.0
+bbcode_enabled = true
+bbcode_text = "[center]Game Over![/center]"
+text = "Game Over!"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

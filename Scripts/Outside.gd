@@ -5,6 +5,7 @@ var Enemy = preload("res://Enemy.tscn")
 var frogImg = preload("res://Graphics/frog.png")
 var bossImg = preload("res://Graphics/frogBoss.png")
 var flamImg = preload("res://Graphics/flamingo.png")
+var turtImg = preload("res://Graphics/turtle.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,9 +14,9 @@ func _ready():
 	frog1.spawn(get_node("EnemySpawns/EnemySpawn1").global_position,frogImg)
 	call_deferred("add_child",frog1)
 	
-	var frog2 = Enemy.instance()
-	frog2.spawn(get_node("EnemySpawns/EnemySpawn2").global_position,frogImg)
-	call_deferred("add_child",frog2)
+	var turt1 = Enemy.instance()
+	turt1.spawn(get_node("EnemySpawns/EnemySpawn2").global_position,turtImg)
+	call_deferred("add_child",turt1)
 	
 	var boss1 = Enemy.instance()
 	boss1.spawn(get_node("EnemySpawns/EnemySpawn3").global_position,bossImg)
@@ -41,9 +42,9 @@ func _ready():
 	boss3.spawn(get_node("EnemySpawns/EnemySpawn8").global_position,bossImg)
 	call_deferred("add_child",boss3)
 	
-	var frog4 = Enemy.instance()
-	frog4.spawn(get_node("EnemySpawns/EnemySpawn9").global_position,frogImg)
-	call_deferred("add_child",frog4)
+	var turt2 = Enemy.instance()
+	turt2.spawn(get_node("EnemySpawns/EnemySpawn9").global_position,frogImg)
+	call_deferred("add_child",turt2)
 	
 	var flam3 = Enemy.instance()
 	flam3.spawn(get_node("EnemySpawns/EnemySpawn10").global_position,flamImg)
@@ -53,7 +54,3 @@ func _ready():
 	boss4.spawn(get_node("EnemySpawns/BossSpawn").global_position,bossImg)
 	call_deferred("add_child",boss4)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

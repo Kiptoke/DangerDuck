@@ -12,7 +12,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if(collision.collider.name == "Player"):
-			print("player hit!")
+			Player.health -= 1
+			print("player health " + str(Player.health))
 			queue_free()
 		if(collision.collider.name == "TileMap"):
 			queue_free()

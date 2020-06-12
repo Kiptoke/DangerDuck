@@ -17,14 +17,16 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	if Input.is_action_just_pressed("mouse_click"):
-		shoot()
-	if Input.is_action_pressed("right_click"):
+		Music.get_node("playerSFX").play()
 		shoot()
 	velocity = velocity.normalized() * speed
 
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	
+	if(Player.health == 0):
+		get_tree().paused = true
 
 func shoot():
 	var bul = Bullet.instance()
@@ -35,3 +37,7 @@ func _on_SceneTransition_body_entered(body):
 	if(body.name == "Player"):
 		get_tree().change_scene("res://Inside.tscn")
 		print("scene transition") # Transition to inside scene
+
+func _on_End_body_entered(body):
+	if(body.name == "Player"):
+		Player.won = true
